@@ -1,6 +1,6 @@
 {
   "name": "pkg-man",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Detect which package manager that should be used",
   "license": "MIT",
   "repository": "https://github.com/luftywiranda13/pkg-man",
