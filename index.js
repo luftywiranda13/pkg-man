@@ -10,5 +10,14 @@ module.exports = (cwd, opts) => {
 
   opts = opts || {};
 
-  return hasLockfile(cwd) === 'yarn.lock' ? 'yarn' : opts.default || 'npm';
+  const lockfile = hasLockfile(cwd);
+
+  switch (lockfile) {
+    case 'package-lock.json':
+      return 'npm';
+    case 'yarn.lock':
+      return 'yarn';
+    default:
+      return opts.default || 'npm';
+  }
 };

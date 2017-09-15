@@ -10,7 +10,10 @@ it('has default values', () => {
   expect(pkgMan('fixtures', {default: 'yarn'})).toBe('yarn');
 });
 
-it('detects package manager', () => {
+it('prefers actual result', () => {
   expect(pkgMan('fixtures/foo')).toBe('npm');
+  expect(pkgMan('fixtures/foo', {default: 'yarn'})).toBe('npm');
+
   expect(pkgMan('fixtures/bar')).toBe('yarn');
+  expect(pkgMan('fixtures/bar', {default: 'npm'})).toBe('yarn');
 });
