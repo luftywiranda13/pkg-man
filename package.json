@@ -1,0 +1,49 @@
+{
+  "name": "pkg-man",
+  "version": "0.0.0",
+  "description": "Detect which package manager that should be used",
+  "license": "MIT",
+  "repository": "https://github.com/luftywiranda13/pkg-man",
+  "author": {
+    "name": "Lufty Wiranda",
+    "email": "lufty.wiranda@gmail.com",
+    "url": "https://www.instagram.com/luftywiranda13"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "precommit": "remove-lockfiles",
+    "test": "xo && jest"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "has-lockfile": "^1.0.2"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^21.1.0",
+    "remove-lockfiles": "^1.1.1",
+    "xo": "^0.18.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true
+  },
+  "xo": {
+    "space": true,
+    "envs": [
+      "jest"
+    ]
+  },
+  "keywords": [
+    "npm",
+    "yarn",
+    "dependencies",
+    "package-manager",
+    "check",
+    "detect"
+  ]
+}
