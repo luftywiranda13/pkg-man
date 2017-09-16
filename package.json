@@ -14,7 +14,7 @@
   },
   "scripts": {
     "precommit": "remove-lockfiles",
-    "test": "xo && jest"
+    "test": "remove-lockfiles && xo && jest"
   },
   "files": [
     "index.js"
