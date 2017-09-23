@@ -3,7 +3,7 @@
 const hasLockfile = require('has-lockfile');
 
 module.exports = (cwd, opts) => {
-  if (typeof cwd === 'object') {
+  if (typeof cwd !== 'string') {
     opts = cwd;
     cwd = process.cwd();
   }
