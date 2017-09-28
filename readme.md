@@ -15,44 +15,53 @@ npm install --save pkg-man
 
 ## Usage
 
-```
-.
-├── foo
-│   ├── package.json
-│   └── yarn.lock
+```sh
+$ tree
 ├── bar
 │   ├── package.json
-│   └── package-lock.json
-└── baz
-    └── package.json
+│   └── yarn.lock
+├── baz
+│   ├── package-lock.json
+│   ├── package.json
+│   └── yarn.lock
+├── foo
+│   ├── package-lock.json
+│   └── package.json
+└── package.json
 ```
 
 ```js
 const pkgMan = require('pkg-man');
 
-pkgMan('foo');
-//=> yarn
-
 pkgMan('bar');
-//=> npm
+//=> yarn
 
 pkgMan('baz');
 //=> npm
 
-pkgMan('foo', { default: 'yarn' });
+pkgMan('foo');
+//=> npm
+
+pkgMan();
+//=> npm
+
+pkgMan({ default: 'yarn' });
+//=> yarn
+
+pkgMan('baz', { default: 'yarn' });
 //=> yarn
 ```
 
 ## API
 
-### pkgMan([cwd], [options])
+### pkgMan([cwd][, options])
 
 #### cwd
 
 Type: `string`<br />
 Default: `process.cwd()`
 
-Path to directory to perform detection
+Current working directory.
 
 #### options
 
@@ -63,13 +72,13 @@ Type: `Object`
 Type: `string`<br />
 Default: `npm`
 
-Default package manager if no lockfile was found
+Default package manager if no lockfiles found.
 
 ## Related
 
-- [pkg-man-cli](https://github.com/luftywiranda13/pkg-man-cli) - CLI for this module
-- [has-lockfile](https://github.com/luftywiranda13/has-lockfile) - Check which lockfile is present in the working directory
+* [pkg-man-cli](https://github.com/luftywiranda13/pkg-man-cli) － CLI for this module
+* [has-lockfile](https://github.com/luftywiranda13/has-lockfile) － Detect lockfiles in the working directory
 
 ## License
 
-MIT &copy; [Lufty Wiranda](https://www.instagram.com/luftywiranda13)
+MIT &copy; [Lufty Wiranda](https://www.luftywiranda.com)

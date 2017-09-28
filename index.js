@@ -2,13 +2,13 @@
 
 const hasLockfile = require('has-lockfile');
 
-module.exports = (cwd, opts) => {
+const pkgMan = (cwd, opts) => {
   if (typeof cwd !== 'string') {
     opts = cwd;
     cwd = process.cwd();
   }
 
-  opts = opts || {};
+  opts = opts || { default: 'npm' };
 
   const lockfiles = hasLockfile(cwd);
 
@@ -16,5 +16,7 @@ module.exports = (cwd, opts) => {
     return lockfiles[0] === 'package-lock.json' ? 'npm' : 'yarn';
   }
 
-  return opts.default || 'npm';
+  return opts.default;
 };
+
+module.exports = pkgMan;
