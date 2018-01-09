@@ -33,41 +33,41 @@ $ tree
 ```js
 const pkgMan = require('pkg-man');
 
-pkgMan('bar');
+pkgMan({ cwd: 'bar' });
 //=> yarn
 
-pkgMan('baz');
+pkgMan({ cwd: 'baz' });
 //=> npm
 
-pkgMan('foo');
+pkgMan({ cwd: 'foo' });
 //=> npm
 
 pkgMan();
 //=> npm
 
-pkgMan({ default: 'yarn' });
+pkgMan({ preferred: 'yarn' });
 //=> yarn
 
-pkgMan('baz', { default: 'yarn' });
+pkgMan({ cwd: 'baz', preferred: 'yarn' });
 //=> yarn
 ```
 
 ## API
 
-### pkgMan([cwd][, options])
+### pkgMan([options])
 
-#### cwd
+#### options
+
+Type: `Object`
+
+##### cwd
 
 Type: `string`<br />
 Default: `process.cwd()`
 
 Current working directory.
 
-#### options
-
-Type: `Object`
-
-##### default
+##### preferred
 
 Type: `string`<br />
 Default: `npm`

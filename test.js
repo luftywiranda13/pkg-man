@@ -3,14 +3,14 @@
 const pkgMan = require('./');
 
 it('detects package manager', () => {
-  expect(pkgMan('fixtures/bar')).toBe('yarn');
-  expect(pkgMan('fixtures/baz')).toBe('npm');
-  expect(pkgMan('fixtures/foo')).toBe('npm');
+  expect(pkgMan({ cwd: 'fixtures/bar' })).toBe('yarn');
+  expect(pkgMan({ cwd: 'fixtures/baz' })).toBe('npm');
+  expect(pkgMan({ cwd: 'fixtures/foo' })).toBe('npm');
   expect(pkgMan()).toBe('npm');
 });
 
 it('prefers actual result', () => {
-  expect(pkgMan('fixtures/baz', { default: 'yarn' })).toBe('yarn');
-  expect(pkgMan('fixtures/foo', { default: 'yarn' })).toBe('npm');
-  expect(pkgMan({ default: 'yarn' })).toBe('yarn');
+  expect(pkgMan({ cwd: 'fixtures/baz', preferred: 'yarn' })).toBe('yarn');
+  expect(pkgMan({ cwd: 'fixtures/foo', preferred: 'yarn' })).toBe('npm');
+  expect(pkgMan({ preferred: 'yarn' })).toBe('yarn');
 });
