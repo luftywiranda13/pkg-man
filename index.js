@@ -5,11 +5,20 @@ const hasLockfile = require('has-lockfile');
 const pkgMan = ({ cwd = process.cwd(), preferred = 'npm' } = {}) => {
   const lockfiles = hasLockfile(cwd);
 
-  if (lockfiles.length === 1) {
-    return lockfiles[0] === 'package-lock.json' ? 'npm' : 'yarn';
+  if (lockfiles.length > 1) {
+    return preferred;
   }
 
-  return preferred;
+  switch (lockfiles[0]) {
+    case 'package-lock.json':
+      return 'npm';
+    case 'npm-shrinkwrap.json':
+      return 'npm';
+    case 'yarn.lock':
+      return 'yarn';
+    default:
+      return preferred;
+  }
 };
 
 module.exports = pkgMan;

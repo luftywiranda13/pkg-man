@@ -23,7 +23,7 @@
     "index.js"
   ],
   "dependencies": {
-    "has-lockfile": "^2.0.0"
+    "has-lockfile": "^3.0.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",

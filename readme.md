@@ -72,7 +72,7 @@ Current working directory.
 Type: `string`<br />
 Default: `npm`
 
-Default package manager if no lockfiles found.
+Preferred package manager if no lockfile or multiple lockfiles found.
 
 ## Related
 
