@@ -1,11 +1,11 @@
 # pkg-man
 
-[![Package Version](https://img.shields.io/npm/v/pkg-man.svg)](https://www.npmjs.com/package/pkg-man)
-[![Build Status: Linux](https://img.shields.io/travis/luftywiranda13/pkg-man/master.svg)](https://travis-ci.org/luftywiranda13/pkg-man)
-[![Coverage Status](https://img.shields.io/codecov/c/github/luftywiranda13/pkg-man/master.svg)](https://codecov.io/gh/luftywiranda13/pkg-man)
-[![Downloads Status](https://img.shields.io/npm/dm/pkg-man.svg)](https://npm-stat.com/charts.html?package=pkg-man&from=2016-04-01)
+> Detect which package manager that should be used
 
-Detect which package manager that should be used
+[![Package Version](https://img.shields.io/npm/v/pkg-man.svg?style=flat-square)](https://www.npmjs.com/package/pkg-man)
+[![Downloads Status](https://img.shields.io/npm/dm/pkg-man.svg?style=flat-square)](https://npm-stat.com/charts.html?package=pkg-man&from=2016-04-01)
+[![Build Status: Linux](https://img.shields.io/travis/luftywiranda13/pkg-man/master.svg?style=flat-square)](https://travis-ci.org/luftywiranda13/pkg-man)
+[![Coverage Status](https://img.shields.io/codecov/c/github/luftywiranda13/pkg-man/master.svg?style=flat-square)](https://codecov.io/gh/luftywiranda13/pkg-man)
 
 ## Installation
 
